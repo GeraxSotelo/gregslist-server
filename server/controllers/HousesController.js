@@ -20,7 +20,7 @@ export default class HousesController {
 
   async getById(req, res, next) {
     try {
-      let data = await houseService.getByID(req.params.id)
+      let data = await houseService.getById(req.params.id)
       return res.send(data)
     } catch (error) {
       next(error)
