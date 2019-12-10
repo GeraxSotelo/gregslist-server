@@ -51,7 +51,7 @@ export default class CarController {
 
   async delete(req, res, next) {
     try {
-      let data = await carService.delete(req.params.id)
+      await carService.delete(req.params.id)
       return res.send("Successfully Deleted")
     } catch (error) {
       next(error)
