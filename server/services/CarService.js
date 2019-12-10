@@ -12,6 +12,7 @@ class CarService {
     if (!data) {
       throw new Error("Invalid ID")
     }
+    return data
   }
   async create(body) {
     let data = await _repository.create(body)

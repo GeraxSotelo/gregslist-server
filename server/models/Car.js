@@ -6,7 +6,7 @@ const Car = new Schema(
     make: { type: String, required: true },
     model: { type: String, required: true },
     price: { type: Number, required: true },
-    year: { type: Number, min: 1800, max: Date.now() + 1 },
+    year: { type: Number, min: 1800, max: 2021 },
     imgUrls: [{ type: String, }],
     description: { type: String, maxlength: 140 }
   },
