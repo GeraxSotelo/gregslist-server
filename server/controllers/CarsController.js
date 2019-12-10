@@ -25,31 +25,34 @@ export default class CarController {
   async getById(req, res, next) {
     try {
       let data = await carService.getById(req.params.id)
-      res.send(data)
+      return res.send(data)
     } catch (error) {
       next(error)
     }
   }
 
-  create(req, res, next) {
+  async create(req, res, next) {
     try {
-
+      let data = await carService.create(req.body)
+      return res.status(201).send(data)
     } catch (error) {
       next(error)
     }
   }
 
-  edit(req, res, next) {
+  async edit(req, res, next) {
     try {
-
+      let data = await carService.edit(req.params.id, req.body)
+      return res.send(data)
     } catch (error) {
       next(error)
     }
   }
 
-  delete(req, res, next) {
+  async delete(req, res, next) {
     try {
-
+      let data = await carService.delete(req.params.id)
+      return res.send("Successfully Deleted")
     } catch (error) {
       next(error)
     }
