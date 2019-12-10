@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import Value from "../models/Value";
+import Car from "../models/Car";
 
-const _repository = mongoose.model("Value", Value);
+const _repository = mongoose.model("Car", Car);
 
 class ValueService {
   async getAll() {
