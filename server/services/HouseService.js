@@ -8,7 +8,7 @@ class HouseService {
   }
 
   async getById(id) {
-    let data = await _repository.findById({ _id: id })
+    let data = await _repository.findById(id)
     if (!data) {
       throw new Error("Invalid ID")
     }
@@ -20,7 +20,7 @@ class HouseService {
   }
 
   async edit(id, update) {
-    let data = await _repository.findOneAndUpdate(id, update, { new: true })
+    let data = await _repository.findOneAndUpdate({ _id: id }, update, { new: true })
     if (!data) {
       throw new Error("Invalid ID")
     }
@@ -28,7 +28,7 @@ class HouseService {
   }
 
   async delete(id) {
-    let data = await _repository.findOneAndDelete(id)
+    let data = await _repository.findOneAndDelete({ _id: id })
     if (!data) {
       throw new Error("Invalid ID")
     }

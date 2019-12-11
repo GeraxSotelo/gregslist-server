@@ -17,8 +17,7 @@ class JobService {
   }
 
   async create(body) {
-    return await _repository.create(body) {
-    }
+    return await _repository.create(body)
   }
 
   async edit(id, body) {

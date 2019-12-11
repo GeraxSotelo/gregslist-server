@@ -5,6 +5,7 @@ import bp from "body-parser";
 import DbContext from "./db/dbConfig";
 import CarsController from "./controllers/CarsController"
 import HousesController from "./controllers/HousesController";
+import JobsController from "./controllers/JobsController"
 
 const port = process.env.PORT || 3000;
 
@@ -37,6 +38,7 @@ server.use(bp.json());
 //NOTE Register all our routes(doorways that can be accessed in our app)
 server.use("/api/cars", new CarsController().router)
 server.use("/api/houses", new HousesController().router)
+server.use("/api/jobs", new JobsController().router)
 
 //NOTE Everything below this line always stays the same
 
