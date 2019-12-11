@@ -40,7 +40,7 @@ export default class JobsController {
 
   async edit(req, res, next) {
     try {
-      let data = jobService.edit(req.params.id, req.body);
+      let data = await jobService.edit(req.params.id, req.body);
       return res.send(data)
     } catch (error) {
       next(error)

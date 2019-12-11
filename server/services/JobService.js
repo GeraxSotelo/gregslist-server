@@ -21,7 +21,7 @@ class JobService {
   }
 
   async edit(id, body) {
-    let data = await _repository.findOneAndUpdate(id, body, { new: true });
+    let data = await _repository.findOneAndUpdate({ _id: id }, body, { new: true });
     if (!data) {
       throw new Error("Invalid ID")
     }
@@ -29,7 +29,7 @@ class JobService {
   }
 
   async delete(id) {
-    let data = await _repository.findOneAndDelete(id)
+    let data = await _repository.findOneAndDelete({ _id: id })
     if (!data) {
       throw new Error("Invalid ID")
     }
