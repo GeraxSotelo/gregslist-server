@@ -20,7 +20,7 @@ class HouseService {
   }
 
   async edit(id, update) {
-    let data = await _repository.findOneAndUpdate({ _id: id }, update, { new: true })
+    let data = await _repository.findOneAndUpdate(id, update, { new: true })
     if (!data) {
       throw new Error("Invalid ID")
     }
